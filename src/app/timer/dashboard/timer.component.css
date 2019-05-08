@@ -1,0 +1,51 @@
+table {
+  width: 100%;
+}
+
+
+table  {
+  transition: none !important;
+  box-shadow: none !important;
+  padding-bottom: 1em;
+}
+
+.network_list_table{
+  padding-top: 50px;
+}
+
+.network_list_item{
+  cursor: pointer;
+}
+
+.mat-flat-button{
+  float: right;
+}
+
+
+.timer{
+  height: 1536px;
+  position: relative;
+}
+
+.timer-countdown {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3500%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+.timer-message{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 400%;
+}
