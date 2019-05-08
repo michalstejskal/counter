@@ -14,10 +14,11 @@
 
   <mat-tab label="config">
     <mat-form-field class="timer-size">
-      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="defaultTimerSeconds" (ngModelChange)="setTimer($event)">
+      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="defaultTimerSeconds">
       <button mat-button *ngIf="defaultTimerSeconds" matSuffix mat-icon-button aria-label="Clear" (click)="defaultTimerSeconds=0">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
+    <button mat-button (click)="setTimer()">reset timer</button>
   </mat-tab>
 </mat-tab-group>

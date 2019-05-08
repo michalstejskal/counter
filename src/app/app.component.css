@@ -29,7 +29,6 @@ html {
 
 
 .header {
-  width: 90%;
   text-align: right;
   margin-left: auto;
   margin-right: auto;
@@ -39,7 +38,6 @@ html {
 /*################################################################################*/
 
 .container {
-  width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-right: auto;
@@ -92,5 +90,5 @@ aside {
 }
 
 .window {
-  margin: 30px 200px;
+  /*margin: 30px 200px;*/
 }

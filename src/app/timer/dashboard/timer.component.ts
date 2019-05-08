@@ -7,9 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TimerComponent implements OnInit {
   private interval;
-  private timerDate;
+  timerDate;
   private timerSeconds = 2700;
-  private defaultTimerSeconds = 2700;
+  defaultTimerSeconds = 2700;
   private timerMessage;
 
   constructor() {
@@ -29,14 +29,15 @@ export class TimerComponent implements OnInit {
         this.timerDate = new Date(1988, 3, 15, 11, Math.floor(this.timerSeconds / 60), this.timerSeconds - (Math.floor(this.timerSeconds / 60) * 60));
       } else {
         this.timerDate = new Date(1988, 3, 15, 11, 0, 0);
-        this.timerMessage = 'pause .. refresh to restart';
+        this.timerMessage = 'pause';
       }
     }, 1000);
   }
 
-  setTimer(event) {
+  setTimer() {
     this.timerSeconds = this.defaultTimerSeconds;
   }
 
 
 }
+
