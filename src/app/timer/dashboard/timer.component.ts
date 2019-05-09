@@ -43,6 +43,7 @@ export class TimerComponent implements OnInit {
     if (!this.isStopped && this.timerSeconds > 0) {
       this.isStopped = true;
       clearInterval(this.interval);
+      this.timerMessage = 'pause';
     } else if (this.isStopped && this.timerSeconds > 0) {
       this.isStopped = false;
       this.startTimer();
