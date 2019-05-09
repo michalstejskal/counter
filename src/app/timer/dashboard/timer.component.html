@@ -3,10 +3,11 @@
 <mat-tab-group>
   <mat-tab label="timer">
     <div class="timer" *ngIf="timerDate != null">
+
       <div class="timer-countdown">
-        {{timerDate.getMinutes()}}:{{timerDate.getSeconds()}}
+        {{timerDate | date: format}}
       </div>
-      <div class="timer-message">
+      <div class="timer-message" (click)="pauseTimer()">
         {{timerMessage}}
       </div>
     </div>
@@ -14,10 +15,7 @@
 
   <mat-tab label="config">
     <mat-form-field class="timer-size">
-      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="defaultTimerSeconds">
-      <button mat-button *ngIf="defaultTimerSeconds" matSuffix mat-icon-button aria-label="Clear" (click)="defaultTimerSeconds=0">
-        <mat-icon>close</mat-icon>
-      </button>
+      <input matInput type="text" placeholder="interval (s)" [(ngModel)]="defaultTimerSeconds">
     </mat-form-field>
     <button mat-button (click)="setTimer()">reset timer</button>
   </mat-tab>

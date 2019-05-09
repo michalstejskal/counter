@@ -8,9 +8,11 @@ import {Component, OnInit} from '@angular/core';
 export class TimerComponent implements OnInit {
   private interval;
   timerDate;
-  private timerSeconds = 2700;
+  timerSeconds = 2700;
   defaultTimerSeconds = 2700;
-  private timerMessage;
+  timerMessage;
+  isStopped = false;
+  format = 'mm:ss';
 
   constructor() {
   }
@@ -20,14 +22,13 @@ export class TimerComponent implements OnInit {
   }
 
   startTimer() {
-
-
     this.interval = setInterval(() => {
       if (this.timerSeconds > 0) {
         this.timerMessage = 'study time';
         this.timerSeconds--;
         this.timerDate = new Date(1988, 3, 15, 11, Math.floor(this.timerSeconds / 60), this.timerSeconds - (Math.floor(this.timerSeconds / 60) * 60));
       } else {
+        clearInterval(this.interval);
         this.timerDate = new Date(1988, 3, 15, 11, 0, 0);
         this.timerMessage = 'pause';
       }
@@ -38,6 +39,20 @@ export class TimerComponent implements OnInit {
     this.timerSeconds = this.defaultTimerSeconds;
   }
 
+  pauseTimer() {
+    if (!this.isStopped && this.timerSeconds > 0) {
+      this.isStopped = true;
+      clearInterval(this.interval);
+    } else if (this.isStopped && this.timerSeconds > 0) {
+      this.isStopped = false;
+      this.startTimer();
+    } else {
+      this.timerSeconds = this.defaultTimerSeconds;
+      this.startTimer();
+    }
+  }
 
+  // ng build --prod
+  // ngh --dir=dist/timer
 }
 

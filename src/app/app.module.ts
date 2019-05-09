@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {AppComponent} from './app.component';
 import {TimerComponent} from './timer/dashboard/timer.component';
 import {routingModule} from './app.routing';
@@ -98,6 +98,7 @@ import {AutosizeModule} from 'ngx-autosize';
     MatTreeModule,
     AutosizeModule,
     routingModule,
+    ProgressSpinnerModule
   ],
   providers: [
     HttpErrorHandler,

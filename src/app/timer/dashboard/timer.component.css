@@ -37,9 +37,12 @@ table  {
 }
 
 .timer-message{
+  cursor: pointer;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   top: 70%;
   text-align: center;
   font-size: 400%;
 }
+
+mat-spinner.small-spinner svg { width: 400px !important; height: 400px !important; }
