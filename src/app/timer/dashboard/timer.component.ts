@@ -52,7 +52,7 @@ export class TimerComponent implements OnInit {
     }
   }
 
-  // ng build --prod
+  // ng build --prod --base-href https://michalstejsky.github.io/timer/
   // ngh --dir=dist/timer
 }
 

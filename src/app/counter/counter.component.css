@@ -1,0 +1,17 @@
+.example-card {
+  max-width: 425px;
+  min-width: 425px;
+
+}
+
+
+
+.content{
+  text-align: center;
+  font-size: 300%;
+}
+
+
+.panel{
+  display: inline-block
+}

@@ -48,12 +48,14 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpErrorHandler} from './http-error-handler.service';
 import {MessageService} from './message.service';
 import {AutosizeModule} from 'ngx-autosize';
+import {CounterComponent} from './counter/counter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimerComponent
+    TimerComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,

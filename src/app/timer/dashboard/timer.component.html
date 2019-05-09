@@ -1,7 +1,7 @@
 
 
-<mat-tab-group>
-  <mat-tab label="timer">
+<!--<mat-tab-group>-->
+  <!--<mat-tab label="timer">-->
     <div class="timer" *ngIf="timerDate != null">
 
       <div class="timer-countdown">
@@ -11,12 +11,12 @@
         {{timerMessage}}
       </div>
     </div>
-  </mat-tab>
+  <!--</mat-tab>-->
 
-  <mat-tab label="config">
-    <mat-form-field class="timer-size">
-      <input matInput type="text" placeholder="interval (s)" [(ngModel)]="defaultTimerSeconds">
-    </mat-form-field>
-    <button mat-button (click)="setTimer()">reset timer</button>
-  </mat-tab>
-</mat-tab-group>
+  <!--<mat-tab label="config">-->
+    <!--<mat-form-field class="timer-size">-->
+      <!--<input matInput type="text" placeholder="interval (s)" [(ngModel)]="defaultTimerSeconds">-->
+    <!--</mat-form-field>-->
+    <!--<button mat-button (click)="setTimer()">reset timer</button>-->
+  <!--</mat-tab>-->
+<!--</mat-tab-group>-->
