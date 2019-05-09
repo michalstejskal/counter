@@ -13,8 +13,10 @@
           {{ item.value }}
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="clearItem(item)"><mat-icon>clear</mat-icon></button>
-          <button mat-button (click)="removeItem(item)"><mat-icon>delete</mat-icon></button>
+          <!--<button mat-button (click)="clearItem(item)"><mat-icon>clear</mat-icon></button>-->
+          <!--<button mat-button (click)="removeItem(item)"><mat-icon>delete</mat-icon></button>-->
+          <button mat-button (click)="clearItem(item)"><img src="./assets/images/reset.png" style="width: 30px"></button>
+          <button mat-button (click)="removeItem(item)"><img src="./assets/images/delete.svg" style="width: 30px"></button>
         </mat-card-actions>
       </mat-card>
 
