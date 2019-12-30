@@ -1,0 +1,12 @@
+<div class="add_item">
+  <mat-form-field class="add_item_name">
+    <input matInput placeholder="name" [(ngModel)]="name" />
+  </mat-form-field>
+
+  <mat-form-field class="add_item_description">
+    <input matInput placeholder="description" [(ngModel)]="description" />
+  </mat-form-field>
+
+  <br />
+  <button mat-raised-button (click)="addItem()" color="primary">add</button>
+</div>

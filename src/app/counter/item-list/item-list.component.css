@@ -1,0 +1,28 @@
+.item {
+  margin-top: 15px;
+  min-height: 140px;
+}
+
+.actions {
+  margin: 0 auto;
+}
+
+.itemName {
+  text-align: center;
+}
+
+.resetIcon {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.content {
+  text-align: center;
+  font-size: 300%;
+}
+
+.add_button {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+}

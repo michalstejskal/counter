@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {AppComponent} from './app.component';
-import {TimerComponent} from './timer/dashboard/timer.component';
 import {routingModule} from './app.routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule, FormGroup, FormsModule} from '@angular/forms';
@@ -48,14 +47,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpErrorHandler} from './http-error-handler.service';
 import {MessageService} from './message.service';
 import {AutosizeModule} from 'ngx-autosize';
-import {CounterComponent} from './counter/counter.component';
+import {ItemListComponent} from './counter/item-list/item-list.component';
+import { ItemAddComponent } from './counter/item-add/item-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimerComponent,
-    CounterComponent
+    ItemListComponent,
+    ItemAddComponent
   ],
   imports: [
     BrowserModule,

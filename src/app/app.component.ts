@@ -7,5 +7,5 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'super-timer';
+  title = 'item_counter';
 }

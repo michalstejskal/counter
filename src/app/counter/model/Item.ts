@@ -1,9 +1,15 @@
 export class Item {
-  name: String;
-  desc: String;
+  name: string;
+  description: string;
   value: number;
 
+  constructor(name: string, description: string, value: number) {
+    this.name = name;
+    this.description = description;
+    this.value = value;
+  }
+
   toString() {
-    return this.name + ';' + this.desc + ';' + this.value;
+    return this.name + ';' + this.description + ';' + this.value;
   }
 }

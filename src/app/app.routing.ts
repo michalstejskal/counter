@@ -1,12 +1,11 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import {TimerComponent} from './timer/dashboard/timer.component';
-import {CounterComponent} from './counter/counter.component';
+import {ItemListComponent} from './counter/item-list/item-list.component';
+import { ItemAddComponent } from './counter/item-add/item-add.component';
 
 const routes: Routes = [
-  {path: '', component: TimerComponent},
-  {path: 'timer', component: TimerComponent},
-  {path: 'counter', component: CounterComponent},
+  {path: '', component: ItemListComponent},
+  {path: 'add', component: ItemAddComponent},
 ];
 
 export const routingModule: ModuleWithProviders = RouterModule.forRoot(routes);
