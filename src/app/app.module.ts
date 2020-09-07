@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { AppComponent } from './app.component';
 import { routingModule } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -93,8 +92,7 @@ import { NgModule } from '@angular/core';
     MatTooltipModule,
     MatTreeModule,
     AutosizeModule,
-    routingModule,
-    ProgressSpinnerModule
+    routingModule
   ],
   providers: [
     HttpErrorHandler,
