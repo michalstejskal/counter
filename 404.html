@@ -26,37 +26,43 @@
   <link rel="stylesheet" href="styles.64817c2adc4fa78fff09.css"></head>
   <body>
     <app-root> </app-root>
+
     <script>
-
-      const messaging = firebase.messaging();
-            messaging
-              .requestPermission()
-              .then(function () {
-                console.log("Have permission");
-                if ('serviceWorker' in navigator) {
-                  navigator.serviceWorker.register('https://michalstejskal.github.io/counter//firebase-messaging-sw.js')
-                  .then(function(registration) {
-                      console.log('Registration successful, scope is:', registration.scope);
-                  }).catch(function(err) {
-                      console.log('Service worker registration failed, error:', err);
-                  });
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/counter/firebase-messaging-sw.js")
+            .then(
+              function (registration) {
+                // Registration was successful
+                console.log(
+                  "ServiceWorker registration successful with scope: ",
+                  registration.scope
+                );
+              },
+              function (err) {
+                // registration failed :(
+                console.log("ServiceWorker registration failed: ", err);
               }
-            }
-
-            // TODO: Replace the following with your app's Firebase project configuration
-            // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-            // var firebaseConfig = {
-            //   apiKey: "AIzaSyCeLbWV4OeB3i5VKYdKmkInihs42mZD1Sk",
-            //   authDomain: "counter-michalstejskal.firebaseapp.com",
-            //   databaseURL: "https://counter-michalstejskal.firebaseio.com",
-            //   projectId: "counter-michalstejskal",
-            //   storageBucket: "counter-michalstejskal.appspot.com",
-            //   messagingSenderId: "824668391509",
-            //   appId: "1:824668391509:web:bd179a57473557d16aacdc",
-            //   measurementId: "G-SYR9QP0CX3",
-            // };
-            // // Initialize Firebase
-            // firebase.initializeApp(firebaseConfig);
+            );
+        });
+      }
+      const messaging = firebase.messaging();
+      messaging
+        .requestPermission()
+        .then(function () {
+          console.log("Notification permission granted.");
+          // TODO(developer): Retrieve an Instance ID token for use with FCM.
+          // ...
+          console.log(messaging.getToken());
+          // return messaging.getToken();
+        })
+        .then(function (token) {
+          console.log(token);
+        })
+        .catch(function (err) {
+          console.log("Unable to get permission to notify.", err);
+        });
     </script>
   <script src="runtime-es2015.5594be69c30456d4cbc5.js" type="module"></script><script src="runtime-es5.5594be69c30456d4cbc5.js" nomodule defer></script><script src="polyfills-es5.8220e5292c4590073250.js" nomodule defer></script><script src="polyfills-es2015.64bf326d46f444ec4af6.js" type="module"></script><script src="main-es2015.a6bd0d2930cf4e83906a.js" type="module"></script><script src="main-es5.a6bd0d2930cf4e83906a.js" nomodule defer></script></body>
 </html>
