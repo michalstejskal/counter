@@ -18,4 +18,11 @@
   <body>
     <app-root> </app-root>
   <script src="runtime-es2015.519d0df05b0be37ce152.js" type="module"></script><script src="runtime-es5.519d0df05b0be37ce152.js" nomodule defer></script><script src="polyfills-es5.8220e5292c4590073250.js" nomodule defer></script><script src="polyfills-es2015.64bf326d46f444ec4af6.js" type="module"></script><script src="main-es2015.462299977336b5b64813.js" type="module"></script><script src="main-es5.462299977336b5b64813.js" nomodule defer></script></body>
+  <script>
+    navigator.serviceworker
+      .register("/counter/firebase-messaging-sw.js")
+      .then((registration) => {
+        getToken({ registration, vapidKey });
+      });
+  </script>
 </html>
