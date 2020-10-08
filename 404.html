@@ -26,43 +26,13 @@
   <link rel="stylesheet" href="styles.64817c2adc4fa78fff09.css"></head>
   <body>
     <app-root> </app-root>
-
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker
-            .register("/counter/firebase-messaging-sw.js")
-            .then(
-              function (registration) {
-                // Registration was successful
-                console.log(
-                  "ServiceWorker registration successful with scope: ",
-                  registration.scope
-                );
-              },
-              function (err) {
-                // registration failed :(
-                console.log("ServiceWorker registration failed: ", err);
-              }
-            );
+          // navigator.serviceWorker.register("/flutter_service_worker.js");
+          navigator.serviceWorker.register("/counter/firebase-messaging-sw.js");
         });
       }
-      const messaging = firebase.messaging();
-      messaging
-        .requestPermission()
-        .then(function () {
-          console.log("Notification permission granted.");
-          // TODO(developer): Retrieve an Instance ID token for use with FCM.
-          // ...
-          console.log(messaging.getToken());
-          // return messaging.getToken();
-        })
-        .then(function (token) {
-          console.log(token);
-        })
-        .catch(function (err) {
-          console.log("Unable to get permission to notify.", err);
-        });
     </script>
   <script src="runtime-es2015.5594be69c30456d4cbc5.js" type="module"></script><script src="runtime-es5.5594be69c30456d4cbc5.js" nomodule defer></script><script src="polyfills-es5.8220e5292c4590073250.js" nomodule defer></script><script src="polyfills-es2015.64bf326d46f444ec4af6.js" type="module"></script><script src="main-es2015.a6bd0d2930cf4e83906a.js" type="module"></script><script src="main-es5.a6bd0d2930cf4e83906a.js" nomodule defer></script></body>
 </html>
