@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../model/Item';
 import { ItemService } from '../service/item-service';
+import { MessagingService } from '../service/messaging.service';
 
 
 @Component({
@@ -11,13 +12,17 @@ import { ItemService } from '../service/item-service';
 export class ItemListComponent implements OnInit {
   items = [];
   itemService: ItemService;
+  message;
 
-  constructor(itemService: ItemService) {
+  constructor(itemService: ItemService, private messagingService: MessagingService) {
     this.itemService = itemService;
   }
 
   ngOnInit(): void {
     this.items = this.itemService.loadItems();
+    this.messagingService.requestPermission();
+    this.messagingService.receiveMessage();
+    this.message = this.messagingService.currentMessage;
   }
 
   increase(item) {

@@ -44,7 +44,12 @@ import { AutosizeModule } from 'ngx-autosize';
 import { ItemListComponent } from './counter/item-list/item-list.component';
 import { ItemAddComponent } from './counter/item-add/item-add.component';
 import { NgModule } from '@angular/core';
-
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { MessagingService } from './counter/service/messaging.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,10 @@ import { NgModule } from '@angular/core';
     ItemAddComponent
   ],
   imports: [
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -97,6 +106,7 @@ import { NgModule } from '@angular/core';
   providers: [
     HttpErrorHandler,
     MessageService,
+    MessagingService,
   ],
   bootstrap: [AppComponent]
 })
