@@ -1,28 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~font-awesome/css/font-awesome.css";
-
-body {
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
-  background-color: #fdf9f9;
+:root {
+  font-family: system-ui, sans-serif;
+  color: #29344a;
+  background: #f4f6fb;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
 }
 
-.basic-container {
-  padding: 30px;
-}
-
-.version-info {
-  font-size: 8pt;
-  float: right;
-}
-
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 5px;
-  width: 100%;
-  color: #eeeeee;
-  text-align: center;
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+button, input { font: inherit; }
+button { display: inline-flex; align-items: center; justify-content: center; border: 0; cursor: pointer; color: inherit; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+:focus-visible { outline: 2px solid #6074c5; outline-offset: 4px; }
+main { max-width: 900px; margin: 0 auto; padding: 24px 20px 110px; }
+.counters { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.counter { background: #fff; border: 1px solid #e0e6f1; border-radius: 8px; padding: 20px; min-width: 0; }
+.counter h2 { margin: 0; font-size: 17px; font-weight: 500; overflow-wrap: anywhere; }
+.value { background: transparent; width: 100%; min-height: 130px; padding: 16px 0; font-size: 56px; font-variant-numeric: tabular-nums; }
+.value span { max-width: 100%; overflow-wrap: anywhere; }
+.actions { display: flex; justify-content: flex-end; gap: 4px; }
+.actions button, dialog button { width: 44px; height: 44px; background: transparent; border-radius: 6px; color: #6d7b96; flex-shrink: 0; }
+.actions button:hover, dialog button:hover { background: #edf1fa; color: #4b60a6; }
+.actions button:last-child:hover { background: #fceef3; color: #b04462; }
+.add { position: fixed; right: max(24px, calc((100vw - 860px) / 2)); bottom: 24px; width: 56px; height: 56px; border-radius: 50%; background: #6074c5; color: #fff; }
+.add:hover { background: #4e61b0; }
+dialog { padding: 16px; border: 1px solid #dce3f0; border-radius: 8px; width: min(440px, calc(100vw - 32px)); color: #29344a; background: #fff; }
+dialog::backdrop { background: #29344a44; }
+dialog form { display: flex; align-items: center; gap: 4px; }
+dialog input { width: 100%; min-width: 0; padding: 11px; border: 1px solid #dce3f0; border-radius: 5px; color: #29344a; background: #f9faff; }
+dialog input::placeholder { color: #77849c; }
+.error { color: #b04462; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+@media (max-width: 540px) {
+  main { padding: 16px 16px 100px; }
+  .counters { grid-template-columns: 1fr; }
 }
